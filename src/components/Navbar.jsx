@@ -1,42 +1,57 @@
 import React, {useState, useEffect} from 'react'
+import PremiumHamburger from './PremiumHamburger'
+import { BRAND } from '../config'
 
 export default function Navbar(){
   const [open,setOpen]=useState(false)
   const [scrolled,setScrolled]=useState(false)
+  const [dark,setDark]=useState(false)
+
   useEffect(()=>{
-    const onScroll=()=>setScrolled(window.scrollY>40)
+    const onScroll=()=>setScrolled(window.scrollY>30)
     window.addEventListener('scroll', onScroll)
     return ()=>window.removeEventListener('scroll', onScroll)
   },[])
+
+  useEffect(()=>{
+    if(dark) document.documentElement.classList.add('dark')
+    else document.documentElement.classList.remove('dark')
+  },[dark])
+
   return (
-    <header className={"fixed w-full z-40 transition-all "+(scrolled?"bg-white/80 backdrop-blur-md shadow-sm":"bg-transparent")}>
-      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <header className={"fixed w-full z-50 transition-all "+(scrolled?"bg-white/70 dark:bg-black/60 backdrop-blur-md shadow-md":"bg-transparent")} >
+      <div className="container flex items-center justify-between py-3">
         <div className="flex items-center gap-3">
-          <img src="/logo.svg" alt="logo" className="h-10 w-auto"/>
-          <div className="font-semibold">Ocean Magics</div>
+          <img src={BRAND.logo} alt={BRAND.name} className="h-10"/>
         </div>
+
         <nav className="hidden md:flex gap-6 items-center text-sm font-medium">
-          <a href="#home" className="hover:text-omBlue">Home</a>
-          <a href="#services" className="hover:text-omBlue">Services</a>
-          <a href="#blogs" className="hover:text-omBlue">Blogs</a>
-          <a href="#testimonials" className="hover:text-omBlue">Testimonials</a>
-          <a href="#contact" className="hover:text-omBlue">Contact</a>
+          <a href="#home" className="hover:text-omIndigo">Home</a>
+          <a href="#services" className="hover:text-omIndigo">Services</a>
+          <a href="#blogs" className="hover:text-omIndigo">Blogs</a>
+          <a href="#testimonials" className="hover:text-omIndigo">Testimonials</a>
+          <a href="#contact" className="hover:text-omIndigo">Contact</a>
         </nav>
-        <div className="md:hidden">
-          <button onClick={()=>setOpen(v=>!v)} className="p-2 border rounded">☰</button>
-        </div>
-      </div>
-      {open && (
-        <div className="md:hidden bg-white/95 border-t">
-          <div className="px-4 py-4 flex flex-col gap-3">
-            <a href="#home" onClick={()=>setOpen(false)}>Home</a>
-            <a href="#services" onClick={()=>setOpen(false)}>Services</a>
-            <a href="#blogs" onClick={()=>setOpen(false)}>Blogs</a>
-            <a href="#testimonials" onClick={()=>setOpen(false)}>Testimonials</a>
-            <a href="#contact" onClick={()=>setOpen(false)}>Contact</a>
+
+        <div className="flex items-center gap-3">
+          <button onClick={()=>setDark(d=>!d)} className="px-3 py-2 rounded bg-gray-100 dark:bg-gray-800">{dark? 'Light':'Dark'}</button>
+          <div className="md:hidden">
+            <PremiumHamburger open={open} toggle={()=>setOpen(o=>!o)}/>
           </div>
         </div>
-      )}
+      </div>
+
+      {/* Mobile drawer */}
+      <div className={(open? 'translate-x-0':'translate-x-full') + ' fixed top-0 right-0 h-full w-72 bg-white/90 dark:bg-black/80 backdrop-blur-md shadow-lg transition-transform'}>
+        <div className="p-6 flex flex-col gap-4">
+          <button onClick={()=>setOpen(false)} className="self-end p-2">Close</button>
+          <a href="#home" onClick={()=>setOpen(false)} className="py-2">Home</a>
+          <a href="#services" onClick={()=>setOpen(false)} className="py-2">Services</a>
+          <a href="#blogs" onClick={()=>setOpen(false)} className="py-2">Blogs</a>
+          <a href="#testimonials" onClick={()=>setOpen(false)} className="py-2">Testimonials</a>
+          <a href="#contact" onClick={()=>setOpen(false)} className="py-2">Contact</a>
+        </div>
+      </div>
     </header>
   )
 }

@@ -1,19 +1,23 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { IMAGES, BRAND } from '../config'
 
 export default function Hero(){
   return (
-    <section id="home" className="pt-20 pb-20">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="bg-white rounded-2xl p-10 shadow-lg" style={{background: 'linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,250,255,0.95))'}}>
-          <motion.div initial={{opacity:0, y:16}} whileInView={{opacity:1,y:0}} transition={{duration:0.7}} viewport={{once:true}}>
-            <h1 className="text-3xl md:text-4xl font-bold">Engineering Digital Excellence</h1>
-            <p className="mt-4 text-slate-600 max-w-2xl">Empowering businesses through technology, creativity, and intelligence.</p>
-            <div className="mt-6">
-              <a href="#contact" className="inline-block bg-gradient-to-r from-omBlue via-omTeal to-omOrange text-white font-semibold px-5 py-3 rounded-lg">Let's Build Together</a>
-            </div>
-          </motion.div>
-        </div>
+    <section id="home" className="relative w-full h-screen overflow-hidden">
+      <div className="absolute inset-0 bg-fixed bg-center bg-cover" style={{backgroundImage: `url(${IMAGES.hero})`, transform: 'translateZ(0)'}} aria-hidden></div>
+      {/* gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/40 to-white/60 dark:from-black/60 dark:via-black/50 dark:to-black/60"></div>
+
+      <div className="relative z-10 flex items-center justify-center h-full">
+        <motion.div initial={{opacity:0, y:30}} animate={{opacity:1, y:0}} transition={{duration:0.9}} className="text-center px-6">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight text-slate-900 dark:text-white">{BRAND.name}</h1>
+          <p className="mt-4 text-lg md:text-xl text-slate-700 dark:text-slate-300 max-w-2xl mx-auto">Engineering Digital Excellence — empowering businesses through technology, creativity, and intelligence.</p>
+          <div className="mt-8 flex justify-center gap-4">
+            <a href="#services" className="px-6 py-3 rounded-full bg-gradient-to-r from-omIndigo to-omViolet text-white font-semibold shadow-lg">Let's Build Together</a>
+            <a href="#contact" className="px-6 py-3 rounded-full border border-gray-200 dark:border-gray-700">Contact Us</a>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

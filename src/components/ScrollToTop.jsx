@@ -8,6 +8,6 @@ export default function ScrollToTop(){
     return ()=> window.removeEventListener('scroll', onScroll)
   },[])
   return visible ? (
-    <button onClick={()=> window.scrollTo({top:0, behavior:'smooth'})} className="fixed right-6 bottom-6 bg-gradient-to-r from-omBlue to-omTeal text-white p-3 rounded-full shadow-lg">↑</button>
+    <button onClick={()=> window.scrollTo({top:0, behavior:'smooth'})} className="fixed right-6 bottom-6 bg-gradient-to-r from-omIndigo to-omViolet text-white p-3 rounded-full shadow-lg">↑</button>
   ) : null
 }
