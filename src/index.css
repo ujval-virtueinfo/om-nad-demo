@@ -5,3 +5,33 @@
 html { scroll-behavior: smooth; }
 
 .container { max-width:1200px; margin-left:auto; margin-right:auto; padding-left:1rem; padding-right:1rem; }
+/* ensure hero content sits above media */
+video.object-cover {
+  /* keep video aligned and covering */
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+/* hide the video on very small devices to save bandwidth (you can tweak breakpoint) */
+@media (max-width: 640px) {
+  video.object-cover { display: none; }
+}
+
+/* subtle parallax (optional) */
+@media (min-width: 1024px) {
+  section#home video.object-cover {
+    transform: translateZ(0);
+    /* optional: slow scale for slight motion */
+    animation: heroScale 30s linear infinite;
+  }
+  @keyframes heroScale {
+    0% { transform: scale(1) }
+    50% { transform: scale(1.04) }
+    100% { transform: scale(1) }
+  }
+}
+
