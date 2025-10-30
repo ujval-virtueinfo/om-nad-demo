@@ -10,7 +10,7 @@ import ScrollToTop from './components/ScrollToTop'
 
 export default function App(){
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-slate-900 dark:text-slate-100">
+    <div className="min-h-screen bg-white text-slate-900">
       <Navbar />
       <main className="pt-20">
         <Hero />

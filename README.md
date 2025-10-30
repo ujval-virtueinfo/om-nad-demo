@@ -1,21 +1,9 @@
-# om-nad-demo (Ocean Magics) - Agency Edition
+# om-nad-demo-agency-final (Ocean Magics)
 
-This is a production-ready React + Vite + Tailwind demo for "Ocean Magics". It includes light & dark mode, premium hamburger with slide drawer, full-width hero with parallax, section backgrounds, Framer Motion animations, and CDN-hosted demo images (Unsplash).
+Full source for Ocean Magics demo. To deploy on Vercel:
+1. Push this folder to GitHub/Bitbucket.
+2. On Vercel: Import Project → select repo.
+3. Build command: npm run build
+4. Output dir: dist
 
-## Deploy to Vercel via Bitbucket (no local machine required)
-
-1. Create a Bitbucket repo named `om-nad-demo`.
-2. Upload the unzipped project files to the repo using Bitbucket's web UI.
-3. Go to https://vercel.com → Import Project → select Bitbucket repo.
-4. Vercel will detect Vite. Confirm build command `npm run build` and output `dist`.
-5. Deploy and the site will be available at `https://<your-project>.vercel.app`.
-
-## Local dev (optional)
-```
-npm install
-npm run dev
-```
-
-## Notes
-- Dark mode enabled via CSS class `.dark` on <html>.
-- Images load from Unsplash CDN; replace in `src/config.js` if needed.
+No local npm required for deployment if you upload the source to Git and let Vercel build it.

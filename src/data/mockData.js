@@ -1,8 +1,8 @@
 export const SERVICES = [
-  { id:'s1', title:'Digital Product & Platform Development', desc:'We build scalable, secure digital backbones to power your business.', bullets:['Full-stack & custom development','CMS & e-commerce','Product strategy & engineering','API integrations'], image:'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1200&q=60' },
-  { id:'s2', title:'Creative & Brand Design', desc:'Unforgettable brand identities and intuitive experiences.', bullets:['UI/UX & interactive design','Brand identity & strategy','3D & immersive design','Visual content & marketing'], image:'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=60' },
-  { id:'s3', title:'AI & Data Solutions', desc:'Unlock the power of your data for automation and insights.', bullets:['AI-powered automation','Machine learning & modeling','Data analytics & BI','Custom ML pipelines'], image:'https://images.unsplash.com/photo-1496318447583-f524534e9ce1?auto=format&fit=crop&w=1200&q=60' },
-  { id:'s4', title:'Digital Growth & Performance', desc:'Data-driven strategies to expand reach and growth.', bullets:['SEO & content strategy','Paid advertising','Social media','Market research'], image:'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60' }
+  { id:'s1', title:'Digital Product & Platform Development', bullets:['Full-stack & custom development','CMS & e-commerce','Product strategy & engineering','API integrations'], image:'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1200&q=60' },
+  { id:'s2', title:'Creative & Brand Design', bullets:['UI/UX & interactive design','Brand identity & strategy','3D & immersive design','Visual content & marketing'], image:'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=60' },
+  { id:'s3', title:'AI & Data Solutions', bullets:['AI-powered automation','Machine learning & modeling','Data analytics & BI','Custom ML pipelines'], image:'https://images.unsplash.com/photo-1496318447583-f524534e9ce1?auto=format&fit=crop&w=1200&q=60' },
+  { id:'s4', title:'Digital Growth & Performance', bullets:['SEO & content strategy','Paid advertising','Social media','Market research'], image:'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60' }
 ]
 
 export const BLOGS = [

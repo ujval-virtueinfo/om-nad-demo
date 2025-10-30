@@ -3,6 +3,5 @@
 @tailwind utilities;
 
 html { scroll-behavior: smooth; }
-:root { --bg: #ffffff; --text: #0f1724; }
-.dark { --bg: #0b1220; --text: #e6eef9; }
-.container { max-width: 1200px; margin-left: auto; margin-right: auto; padding-left:1rem; padding-right:1rem; }
+
+.container { max-width:1200px; margin-left:auto; margin-right:auto; padding-left:1rem; padding-right:1rem; }
