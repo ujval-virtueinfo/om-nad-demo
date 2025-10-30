@@ -5,16 +5,40 @@ import { IMAGES, BRAND } from '../config'
 export default function Hero(){
   return (
     <section id="home" className="relative w-full h-screen overflow-hidden">
-      <div className="absolute inset-0 bg-fixed bg-center bg-cover" style={{backgroundImage: `url(${IMAGES.hero})`, transform: 'translateZ(0)'}} aria-hidden></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/40 to-white/60"></div>
-      <div className="relative z-10 flex items-center justify-center h-full">
-        <motion.div initial={{opacity:0, y:30}} animate={{opacity:1, y:0}} transition={{duration:0.9}} className="text-center px-6">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight text-slate-900">{BRAND.name}</h1>
-          <p className="mt-4 text-lg md:text-xl text-slate-700 max-w-2xl mx-auto">Engineering Digital Excellence — empowering businesses through technology, creativity, and intelligence.</p>
-          <div className="mt-8 flex justify-center gap-4">
-            <a href="#services" className="px-6 py-3 rounded-full bg-gradient-to-r from-omIndigo to-omViolet text-white font-semibold shadow-lg">Let's Build Together</a>
-            <a href="#contact" className="px-6 py-3 rounded-full border border-gray-200">Contact Us</a>
-          </div>
+      {/* Full width background image */}
+      <div className="absolute inset-0 bg-center bg-cover" style={{
+        backgroundImage: `url(${IMAGES.hero})`
+      }} aria-hidden="true"></div>
+
+      {/* Gradient overlay using brand colours */}
+      <div className="absolute inset-0 bg-gradient-to-b from-omBlue/70 via-omTeal/40 to-omViolet/70"></div>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+          className="text-5xl md:text-7xl font-bold text-white leading-tight">
+          {BRAND.name}
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.2 }}
+          className="mt-4 text-lg md:text-xl text-white/90 max-w-2xl">
+          Engineering digital solutions that don’t just perform — they transform.
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.4 }}
+          className="mt-10">
+          <a
+            href="#services"
+            className="px-8 py-4 rounded-lg bg-gradient-to-r from-omBlue to-omViolet text-white font-semibold shadow-lg hover:from-omTeal hover:to-omIndigo transition">
+            Explore Our Services
+          </a>
         </motion.div>
       </div>
     </section>
